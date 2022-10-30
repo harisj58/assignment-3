@@ -16,6 +16,13 @@ The project's main use is to obtain relevant information about the movie, includ
 The project uses the OMDb API - The Open Movie Database (http://www.omdbapi.com/), a RESTful API, to obtain the movie information based on the title entered by the user.
 The process of making this web application was highly simplified by the employment of ReactJS. The website is hosted at Heroku.
 
+### Changelog:
+v1.0.0
+* Initial build
+
+v1.1.0
+* Quality of life improvements (button mapping, logo fixes, improved searching)
+
 ## Screenshots
 
 The site on visiting:
@@ -23,5 +30,6 @@ The site on visiting:
 
 The site in action:
 ![image](https://user-images.githubusercontent.com/72334266/145678295-24267da6-5575-4dee-b21b-b98f69f56296.png)
+
 
 
