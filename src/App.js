@@ -23,7 +23,6 @@ function App() {
     fetch(url)
       .then((response) => response.json())
       .then((movie) => {
-        console.log(movie);
         setMovieInfo(movie);
       })
       .catch((err) => {
@@ -35,7 +34,7 @@ function App() {
     <div className="App">
       <div className="container">
         <div className="padding">
-          <h1>Movie Search</h1>
+          <h1>🎬 Movie Search: Home of your favorite flicks!</h1>
           <div className="input-group">
             <input
               type="text"
@@ -52,65 +51,74 @@ function App() {
               type="submit"
               onKeyPress={(e) => e.key === "Enter" && getMovieData()}
             >
-              Get Movie
+              🔍
             </button>
           </div>
           {blank ? (
-            <p>The title is left blank :(</p>
+            <p style={{ textAlign: "center", color: "black" }}>
+              The title is left blank :(
+            </p>
           ) : movieInfo?.Error === undefined ? (
-            <div className="movie">
-              <div className="poster">
-                <img
-                  src={movieInfo?.Poster}
-                  alt="Poster"
-                  className="img-poster"
-                />
-              </div>
-              <div className="details">
-                <div className="padding">
-                  <h1>{movieInfo?.Title}</h1>
-                  <p>
-                    <strong>Genre:</strong> {movieInfo?.Genre}
-                  </p>
-                  <p>
-                    <strong>Director:</strong> {movieInfo?.Director}
-                  </p>
-                  <p>
-                    <strong>Plot:</strong> {movieInfo?.Plot}
-                  </p>
-                  <p>
-                    <strong>Cast:</strong> {movieInfo?.Actors}
-                  </p>
-                  <p>
-                    <strong>Box Office Collection:</strong>{" "}
-                    {movieInfo?.BoxOffice}
-                  </p>
-                  <p>
-                    <strong>Language:</strong> {movieInfo?.Language}
-                  </p>
-                  <p>
-                    <strong>Release Date:</strong> {movieInfo?.Released}
-                  </p>
-                  <p>
-                    <strong>Runtime:</strong> {movieInfo?.Runtime}
-                  </p>
+            <div className="card">
+              <div className="movie">
+                <div className="poster-card">
+                  <img
+                    src={movieInfo?.Poster}
+                    alt="Poster"
+                    className="img-poster"
+                  />
+                </div>
+                <div className="details">
+                  <div>
+                    <h1>{movieInfo?.Title}</h1>
+                    <p>
+                      <strong>Genre:</strong> {movieInfo?.Genre}
+                    </p>
+                    <p>
+                      <strong>Director:</strong> {movieInfo?.Director}
+                    </p>
+                    <p>
+                      <strong>Plot:</strong> {movieInfo?.Plot}
+                    </p>
+                    <p>
+                      <strong>Cast:</strong> {movieInfo?.Actors}
+                    </p>
+                    <p>
+                      <strong>Box Office Collection:</strong>{" "}
+                      {movieInfo?.BoxOffice}
+                    </p>
+                    <p>
+                      <strong>Language:</strong> {movieInfo?.Language}
+                    </p>
+                    <p>
+                      <strong>Release Date:</strong> {movieInfo?.Released}
+                    </p>
+                    <p>
+                      <strong>Runtime:</strong> {movieInfo?.Runtime}
+                    </p>
 
-                  <div className="ratings">
-                    {movieInfo?.Ratings.map((rating, index) => (
-                      <div key={index}>
-                        <p>
-                          <strong>{rating.Source}</strong>
-                          <h3>{rating.Value}</h3>
-                        </p>
-                      </div>
-                    ))}
+                    <div className="ratings">
+                      {movieInfo?.Ratings.map((rating, index) => (
+                        <div key={index}>
+                          <p>
+                            <strong>{rating.Source}</strong>
+                            <h3>{rating.Value}</h3>
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           ) : (
-            <p>Movie not found :(</p>
+            <p style={{ textAlign: "center", color: "black" }}>
+              Movie not found :(
+            </p>
           )}
+          <p className="footer" style={{ textAlign: "center" }}>
+            Made with 💖 by Haris Javed
+          </p>
         </div>
       </div>
     </div>

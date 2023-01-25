@@ -38,29 +38,28 @@
 
 body {
   background-color: #252424;
+  background:url(https://source.unsplash.com/E8Ufcyxz514/2400x1823)
+    center / cover no-repeat fixed;
+
 }
 
 .container {
   width: 70%;
-  /* background-color: gray; */
   margin-left: 15%;
-  padding-top: 50px;
+  padding-top: 20px;
   padding-bottom: 20px;
   color: white;
 }
 
-.padd {
-  padding: 15px;
-}
-
 .search-field {
-  width: 80%;
+  width: 100%;
   height: 40px;
   font-size: 18px;
   border-radius: 10px;
   border: 1px solid white;
   outline: none;
   text-indent: 20px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
   background-color: #252424;
   color: white;
 }
@@ -74,36 +73,42 @@ body {
 }
 
 .poster {
-  height: 600px;
+  height: 100%;
   width: 33%;
   /* background-color: red; */
   overflow: hidden;
+  border-radius: 25px;
+  border: 2px solid white
 }
 
 .details {
   width: 65%;
+  color: black;
   /* background-color: green; */
 }
 
 .input-group {
   display: flex;
-  justify-content: space-between;
+  justify-content: normal;
   margin-top: 20px;
 }
 
 .btn {
-  width: 17%;
+  width: 50px;
   background-color: #1072ec;
   color: white;
   font-size: 18px;
   border: none;
-  border-radius: 10px;
+  border-radius: 30px;
   outline: none;
+  margin-left: 10px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
 
 .img-poster {
   width: 100%;
+  border-radius: 20px;
 }
 
 .padd p {
@@ -115,6 +120,7 @@ h1,
 h2,
 h3 {
   margin: 0px;
+  color: #252424;
 }
 
 .ratings {
@@ -127,4 +133,55 @@ h3 {
 
 .txt {
   text-align: 'center';
+}
+
+.footer {
+  color:black;
+}
+
+.card {
+  font: 1em/1.618 Inter, sans-serif;
+  margin-top: 10px;
+  max-width: 300px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  max-width: 100%;
+  height: 90%;
+  padding: 35px;
+
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(15px);
+}
+
+.poster-card {
+  font: 1em/1.618 Inter, sans-serif;
+  margin-top: 10px;
+  max-width: 300px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  max-width: 90%;
+  height: 90%;
+  padding: 13px;
+
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(15px);
+}
+
+.card-footer {
+  font-size: 0.65em;
+  color: #446;
 }
