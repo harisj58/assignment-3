@@ -37,16 +37,13 @@
 /* custom css  */
 
 body {
-  background-color: #252424;
-  background:url(https://source.unsplash.com/E8Ufcyxz514/2400x1823)
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://source.unsplash.com/E8Ufcyxz514/2400x1823)
     center / cover no-repeat fixed;
-
 }
 
 .container {
   width: 70%;
   margin-left: 15%;
-  padding-top: 20px;
   padding-bottom: 20px;
   color: white;
 }
@@ -75,7 +72,6 @@ body {
 .poster {
   height: 100%;
   width: 33%;
-  /* background-color: red; */
   overflow: hidden;
   border-radius: 25px;
   border: 2px solid white
@@ -84,7 +80,39 @@ body {
 .details {
   width: 65%;
   color: black;
-  /* background-color: green; */
+}
+
+/* CSS for mobile devices */
+@media screen and (max-width: 600px) {
+.title {
+  text-align: center;
+}
+  .img-poster {
+    display: flex;
+    overflow: hidden;
+    width: 10%;
+    border-radius: px;
+  }
+.container {
+  width: 90%;
+  margin-left: 5%;
+  padding-bottom: 20px;
+  color: white;
+}
+.details {
+  width: 100%;
+  color: black;
+  font-size: 0.85em;
+}
+.movie {
+  margin-top: 5px;
+  display: grid;
+  justify-content: space-between;
+}
+.ratings {
+  display: flex;
+  text-align: center;
+}
 }
 
 .input-group {
@@ -132,7 +160,7 @@ h3 {
 }
 
 .txt {
-  text-align: 'center';
+  text-align: center;
 }
 
 .footer {
@@ -158,6 +186,8 @@ h3 {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
 
   backdrop-filter: blur(15px);
+  z-index: -1;
+  position: relative;
 }
 
 .poster-card {
@@ -178,10 +208,24 @@ h3 {
   background-color: rgba(255, 255, 255, 0.45);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
 
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(10px);
+  z-index: -1;
+  position: relative;
 }
 
 .card-footer {
   font-size: 0.65em;
   color: #446;
+}
+
+.header {
+  padding-top: 10px;
+  padding-bottom: 15px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  border: 1px solid rgba(255, 255, 255, .25);
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
 }

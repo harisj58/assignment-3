@@ -6,9 +6,18 @@ function App() {
   let [movieInfo, setMovieInfo] = useState(null);
   let [title, setTitle] = useState("the suicide squad");
   let [blank, setIsBlank] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+  const tagline = width < 600 ? "" : ": Home of your favorite flicks!";
+  console.log(width);
+
+  const updateDimensions = () => {
+    setWidth(window.innerWidth);
+  };
 
   useEffect(() => {
     getMovieData();
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -32,9 +41,11 @@ function App() {
 
   return (
     <div className="App">
+      <div className="header">
+        <h1>🎬 Movie Search{tagline}</h1>
+      </div>
       <div className="container">
         <div className="padding">
-          <h1>🎬 Movie Search: Home of your favorite flicks!</h1>
           <div className="input-group">
             <input
               type="text"
@@ -70,7 +81,7 @@ function App() {
                 </div>
                 <div className="details">
                   <div>
-                    <h1>{movieInfo?.Title}</h1>
+                    <h1 className="title">{movieInfo?.Title}</h1>
                     <p>
                       <strong>Genre:</strong> {movieInfo?.Genre}
                     </p>
@@ -102,7 +113,7 @@ function App() {
                         <div key={index}>
                           <p>
                             <strong>{rating.Source}</strong>
-                            <h3>{rating.Value}</h3>
+                            <h3 style={{ color: "red" }}>{rating.Value}</h3>
                           </p>
                         </div>
                       ))}
